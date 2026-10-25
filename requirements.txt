@@ -1,0 +1,12 @@
+# EEIA 2026 — Interface Streamlit de pronostic (cancer du sein MSK-IMPACT 2025)
+# Installation :  pip install -r requirements.txt
+streamlit>=1.36
+lifelines>=0.29        # désérialisation du modèle de Cox (cox_model.pkl)
+scikit-learn>=1.4      # désérialisation du StandardScaler (scaler.pkl)
+joblib>=1.3
+pandas>=2.0
+numpy>=2.0        # IMPORTANT : les .pkl ont été sérialisés sous numpy 2.x (numpy._core)
+                  # -> numpy 1.x échoue au chargement avec "No module named 'numpy._core'"
+matplotlib>=3.8
+# NB : scikit-survival volontairement absent — uniquement requis pour rsf_model.pkl (1,5 Go),
+# qu'on ne charge pas dans l'interface.
